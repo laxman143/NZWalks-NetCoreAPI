@@ -48,6 +48,7 @@ namespace NZWalks.API.Controllers
         {
             // Get all walks from the repository
             var walksDomain = await walkRepository.GetAllAsync(filterOn,filterQuery,sortBy,isAscending ?? true, pageNumber, pageSize);
+
             // Map Domain Model to DTO
             var walksDto = mapper.Map<List<WalkDto>>(walksDomain);
             return Ok(walksDto);
